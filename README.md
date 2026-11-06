@@ -6,10 +6,12 @@ MAVERICK explores the engineering journey from an **existing, trained model arti
 
 The project is **local-first and GCP-aligned**. It does not require a paid cloud environment, a proprietary fraud platform, access to real payment systems or model training.
 
-> **Current status:** Kubernetes, Kafka and the synthetic transaction publisher are operational. The consumer application and smoke-test Job have been created; its final outcome was reported as complete. **Model inference, scored-event persistence, dashboards and model lifecycle automation are planned**, not yet deployed.
+> **Current status (6 November 2026):** Scout → Flightline Kafka → Wingman ingestion smoke test passed (100 synthetic payments). Separately, the externally trained bank-transfer fraud model was successfully loaded with scikit-learn 1.8.0, validated through a MAVERICK adapter, and served through a **local FastAPI HTTP endpoint** (`MAVERICK SQUADRON HTTP INFERENCE PASSED`). **The two paths are not yet connected.** Squadron is not yet deployed on Kubernetes; scored persistence and dashboards remain planned. See the [living engineering progress journal](docs/PROGRESS_LOG.md) for tested commands, explanations, failures, restart guidance and **20 Mermaid diagrams**.
 >
 > 
 > **Boundary:** MAVERICK performs **asynchronous, non-authoritative scoring**. It does not authorise payments, return decisions to an originating payment system or reproduce fraud case management.
+
+**Session-by-session build record:** [MAVERICK living engineering progress journal](docs/PROGRESS_LOG.md).
 
 ## What MAVERICK aims to prove
 
