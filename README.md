@@ -487,15 +487,3 @@ The prediction `0.73` is **illustrative**, not a result from a deployed model. A
 | GCP reference deployment | **Planned / optional** | Documented infrastructure mapping; cloud run only within a defined budget |
 
 Benchmarking should **separate Kafka ingestion throughput from actual model inference throughput**. One million messages read from Kafka does not mean one million transformer predictions were completed.
-
-## 11. Public repository and security scope
-
-MAVERICK uses **synthetic or properly licensed public data only**. Do not publish customer information, employer documents, internal architecture diagrams, confidential discussions, proprietary model weights, credentials, production hostnames or tokens.
-
-The local configuration is a **development demonstration**: a single Kafka broker, non-production security settings, local volumes and limited resources. A real deployment would require approved identity, networking, encryption, secrets management, monitoring, availability and data-governance controls.
-
-No proprietary vendor infrastructure is required to build or run MAVERICK. The project does not send payments or decisions to real financial systems.
-
----
-
-**MAVERICK's core demonstration:** supply an existing model artifact, deploy it through a common platform, stream synthetic transactions into it, persist typed results independently, observe the operation, then swap the model without rebuilding the ingestion and storage layers.
